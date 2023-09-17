@@ -1,9 +1,21 @@
 import java.util.Scanner;
 
+
 public class TheNameGameMain {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        gameResultPrompt(scanner);
+        scanner.close();
+    }
+
+    private static boolean isWinningName(Scanner scanner) {
+        System.out.println("What is your name?");
+        String inputtedName = scanner.nextLine();
+        return inputtedName.equalsIgnoreCase("Alex");
+    }
+
+    public static void gameResultPrompt(Scanner scanner) {
 
         while (true) {
             boolean playerHasWon = isWinningName(scanner);
@@ -20,13 +32,6 @@ public class TheNameGameMain {
             }
         }
 
-        scanner.close();
-    }
-
-    private static boolean isWinningName(Scanner scanner) {
-        System.out.println("What is your name?");
-        String inputtedName = scanner.nextLine();
-        return inputtedName.equalsIgnoreCase("Alex");
     }
 
     private static boolean playAgainPrompt(Scanner scanner) {
